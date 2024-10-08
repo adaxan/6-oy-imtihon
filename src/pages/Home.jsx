@@ -101,10 +101,10 @@ function Home() {
             />
           </div>
 
-          <div className="flex items-center bg-purple-600 text-white rounded-md px-10">
+          <div onSubmit={fetchBooks} className="flex items-center bg-purple-600 text-white rounded-md px-7 cursor-pointer0">
             <FaFilter />
             <button
-              onClick={fetchBooks}
+              
               className="bg-purple-600 text-white rounded-md"
             >
               Filter
