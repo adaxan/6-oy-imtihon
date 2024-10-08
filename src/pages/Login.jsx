@@ -47,7 +47,7 @@ function Register() {
             }
         })
             .then(response => {
-                if(response.data.accessToken) {
+                if(response.data.user.id) {
                   localStorage.setItem("token", response.data.accessToken),
                   localStorage.setItem("user", JSON.stringify(response.data.user))
                     navigate("/");
