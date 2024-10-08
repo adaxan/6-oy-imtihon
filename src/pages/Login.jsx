@@ -90,7 +90,7 @@ function Register() {
             placeholder="Enter password..."
           />
         </div>
-        <button disabled={loading} onClick={handLogin} className="p-4 w-1/2 rounded-md text-white bg-purple-600 hover:bg-purple-700">{loading ? "Logging in" : "Login"}</button>
+        <button disabled={loading} onClick={handLogin} className="py-4 w-1/2 rounded-md text-white bg-purple-600 hover:bg-purple-700">{loading ? "Logging in" : "Login"}</button>
         <Link className="text-gray-500 mt-4" to='/register'>Akkaunt yo'qmi?? <span className="text-purple-500 hover:underline">Register</span></Link>
       </form>
     </div>

@@ -7,10 +7,10 @@ function Details() {
   const { id } = useParams();
   const [book, setBook] = useState({});
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     axios
       .get(`${import.meta.env.VITE_API_URL}/books/${id}`)
       .then((response) => {
@@ -20,16 +20,17 @@ function Details() {
         console.log(err);
       })
       .finally(() => {
-        setLoading(false)
-      })
+        setLoading(false);
+      });
   }, [id]);
 
   function handBack(event) {
     event.preventDefault();
     navigate("/");
   }
+
   return (
-    <div>
+    <div className="flex flex-col">
       {loading && <PacmanLoader color="yellow" className="mx-auto" />}
       <button
         className="mt-10 ml-24 bg-purple-700 py-2 px-4 rounded-md text-white"
@@ -38,14 +39,14 @@ function Details() {
         Back
       </button>
       <div className="p-4 flex gap-32 justify-center mt-14">
-        <div>
+        <div className="bg-transparent">
           <img
             className="w-96 h-auto rounded-lg"
             src={book.thumbnailUrl}
             alt={book.title}
           />
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 p-4  bg-red-600 shadow-lg rounded-lg">
           <h1 className="text-2xl font-sans">
             <span className="font-bold">Name:</span> {book.title}
           </h1>
@@ -58,17 +59,15 @@ function Details() {
             {book.pageCount} pages
           </h4>
           <p>
-            <span className="font-bold">Caterogie: </span>
+            <span className="font-bold">Categories: </span>
             {book.categories ? book.categories.join(", ") : "No categories"}
           </p>
           <p>
-            {" "}
             <span className="font-bold">Short Description: </span>
             {book.shortDescription || "No description available."}
-          </p>{" "}
+          </p>
           <br />
           <p>
-            {" "}
             <span className="font-bold">Long Description: </span>
             {book.longDescription || "No description available."}
           </p>

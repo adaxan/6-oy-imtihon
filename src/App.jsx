@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div >
       <Routes>
         <Route
           index
@@ -45,7 +45,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route
           path="/books/:id"
-          element={<MainLayout><Details /></MainLayout>}
+          element={<PrivateRoute isAuth={token}><MainLayout><Details /></MainLayout></PrivateRoute>}
         />
       </Routes>
     </div>
