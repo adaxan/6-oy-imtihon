@@ -92,7 +92,7 @@ function Home() {
         
         <button 
           onClick={fetchBooks}
-          className="bg-purple-600 text-white rounded-md  px-4"
+          className="bg-purple-600 text-white rounded-md px-10"
           >
           Filter
         </button>
